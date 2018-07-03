@@ -3,7 +3,7 @@
 class Cars { 
     public $cars, 
     $luda_breaking_coef = 0.003, //коэффициент поломки марки Luda
-    $default_breaking_coef = 0.01, //стандартный коэффициент поломки
+    $default_breaking_coef = 0.001, //стандартный коэффициент поломки
     $homba_gas_coef = 0.7, //коэффициент расхода бензина марки Homba
     $initial_break_value = 0.005, //начальный коэф. поломки
     $luda =0,

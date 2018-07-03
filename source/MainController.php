@@ -39,7 +39,7 @@ class Main {
         $this->output['sum_initial_distance'] = array_sum(array_column($this->ready_cars, 'km'));
         $this->output['sum_durability'] = array_sum(array_column($this->ready_cars, 'durability'));
         $this->output['sum_initial_durability'] = array_sum(array_column($this->ready_cars, 'initial_durability'));
-        $this->output['suggested_places'] = round(($this->output['sum_durability'] + $this->output['sum_initial_durability'])/100);
+        $this->output['suggested_places'] = ceil(($this->output['sum_durability'] + $this->output['sum_initial_durability'])/100);
         $this->output['suggested_places_without_initial'] = ceil(($this->output['sum_durability'])/100);
         $this->output['sum_gas'] = array_sum(array_column($this->ready_cars, 'gas'));
         
