@@ -24,7 +24,15 @@ $output = $main->calculate();
 
 <div class="container">
   <div class="jumbotron">
-    <h2>Расчет прогнозируемых параметров для таксопарка кол-вом мест : <?php echo $output['places']; ?> и кол-вом машин : <?php echo $output['total_cars']; ?></h2>
+    <h3>Расчет прогнозируемых параметров для таксопарка.</h3><br />
+        Кол-вом паркомест : <?php echo $output['places']; ?> <br />
+        Кол-вом машин : <?php echo $output['total_cars']; ?> <br />
+        Опытных водителей : <?php echo $output['bivaliy']; ?> <br />
+        Обычных водителей : <?php echo $output['casual']; ?> <br />
+        Luda : <?php echo $output['luda']; ?> <br />
+        Homba : <?php echo $output['homba']; ?> <br />
+        hendai : <?php echo $output['hendai']; ?> 
+    
   </div>
   <div class="row">
     <div class="col-sm-4">

@@ -3,14 +3,16 @@ include 'source/DriversController.php';
 include 'source/CarsController.php';
 
 class Main { 
-    public $places;
-    public $drivers; 
-    public $cars;
-    public $ranges = array("30", "90", "360");
-    public $output;
+    public $places,
+    $drivers, 
+    $cars,
+    $ranges = array("30", "90", "360"),
+    $output;
     
     function __construct($input) { 
         $input = json_decode($input, true);
+        if(!isset($input['park']) || !isset($input['drivers']) || !isset($input['cars']))
+            return false;
         $this->places = $input['park']['places'];
         $this->drivers = new Drivers($input['drivers']);
         $this->cars = new Cars($input["cars"]); 
@@ -27,6 +29,11 @@ class Main {
         }
         $this->output['places'] = $this->places;
         $this->output['total_cars'] = count($this->ready_cars);
+        $this->output['bivaliy'] = $this->drivers->experiensed;
+        $this->output['casual'] = $this->drivers->casual;
+        $this->output['luda'] = $this->cars->luda;
+        $this->output['homba'] = $this->cars->homba;
+        $this->output['hendai'] = $this->cars->hendai;
         $this->output['ranges'] = $this->ranges;
         $this->output['sum_distance'] = array_sum(array_column($this->ready_cars, 'distance'));
         $this->output['sum_initial_distance'] = array_sum(array_column($this->ready_cars, 'km'));
