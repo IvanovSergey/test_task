@@ -1,443 +1,174 @@
 <?php 
 
 class Main { 
-    public $output,
-    $teams =array(
-	0 => array(
-		'name' => 'Бразилия', # название команды
-		'games' => 104, # всего игр
-		'win' => 70, # количество побед
-		'draw' => 17, # количестве ничей
-		'defeat' => 17, # количество поражений
-		'goals' => array(
-			'scored' => 221, # всего забито голов
-			'skiped' => 102, # всего пропущено голов
-		),
-	),
-	1 => array(
-		'name' => 'Германия / ФРГ',
-		'games' => 106,
-		'win' => 66,
-		'draw' => 20,
-		'defeat' => 20,
-		'goals' => array(
-			'scored' => 224,
-			'skiped' => 121,
-		),
-	),
-	2 => array(
-		'name' => 'Италия',
-		'games' => 83,
-		'win' => 45,
-		'draw' => 21,
-		'defeat' => 17,
-		'goals' => array(
-			'scored' => 128,
-			'skiped' => 77,
-		),
-	),
-	3 => array(
-		'name' => 'Аргентина',
-		'games' => 77,
-		'win' => 42,
-		'draw' => 14,
-		'defeat' => 21,
-		'goals' => array(
-			'scored' => 131,
-			'skiped' => 84,
-		),
-	),
-	4 => array(
-		'name' => 'Англия',
-		'games' => 62,
-		'win' => 26,
-		'draw' => 20,
-		'defeat' => 16,
-		'goals' => array(
-			'scored' => 79,
-			'skiped' => 56,
-		),
-	),
-	5 => array(
-		'name' => 'Испания',
-		'games' => 59,
-		'win' => 29,
-		'draw' => 12,
-		'defeat' => 18,
-		'goals' => array(
-			'scored' => 92,
-			'skiped' => 66,
-		),
-	),
-	6 => array(
-		'name' => 'Франция',
-		'games' => 59,
-		'win' => 28,
-		'draw' => 12,
-		'defeat' => 19,
-		'goals' => array(
-			'scored' => 106,
-			'skiped' => 71,
-		),
-	),
-	7 => array(
-		'name' => 'Голландия',
-		'games' => 50,
-		'win' => 27,
-		'draw' => 12,
-		'defeat' => 11,
-		'goals' => array(
-			'scored' => 86,
-			'skiped' => 48,
-		),
-	),
-	8 => array(
-		'name' => 'Уругвай',
-		'games' => 51,
-		'win' => 20,
-		'draw' => 12,
-		'defeat' => 19,
-		'goals' => array(
-			'scored' => 80,
-			'skiped' => 71,
-		),
-	),
-	9 => array(
-		'name' => 'Швеция',
-		'games' => 46,
-		'win' => 16,
-		'draw' => 13,
-		'defeat' => 17,
-		'goals' => array(
-			'scored' => 74,
-			'skiped' => 69,
-		),
-	),
-	10 => array(
-		'name' => 'Россия / СССР',
-		'games' => 40,
-		'win' => 17,
-		'draw' => 8,
-		'defeat' => 15,
-		'goals' => array(
-			'scored' => 66,
-			'skiped' => 47,
-		),
-	),
-	11 => array(
-		'name' => 'Сербия / Югославия    ',
-		'games' => 43,
-		'win' => 17,
-		'draw' => 8,
-		'defeat' => 18,
-		'goals' => array(
-			'scored' => 64,
-			'skiped' => 59,
-		),
-	),
-	12 => array(
-		'name' => 'Мексика',
-		'games' => 53,
-		'win' => 14,
-		'draw' => 14,
-		'defeat' => 25,
-		'goals' => array(
-			'scored' => 57,
-			'skiped' => 92,
-		),
-	),
-	13 => array(
-		'name' => 'Бельгия',
-		'games' => 41,
-		'win' => 14,
-		'draw' => 9,
-		'defeat' => 18,
-		'goals' => array(
-			'scored' => 52,
-			'skiped' => 66,
-		),
-	),
-	14 => array(
-		'name' => 'Польша',
-		'games' => 31,
-		'win' => 15,
-		'draw' => 5,
-		'defeat' => 11,
-		'goals' => array(
-			'scored' => 44,
-			'skiped' => 40,
-		),
-	),
-	15 => array(
-		'name' => 'Венгрия',
-		'games' => 32,
-		'win' => 15,
-		'draw' => 3,
-		'defeat' => 14,
-		'goals' => array(
-			'scored' => 87,
-			'skiped' => 57,
-		),
-	),
-	16 => array(
-		'name' => 'Португалия',
-		'games' => 26,
-		'win' => 13,
-		'draw' => 4,
-		'defeat' => 9,
-		'goals' => array(
-			'scored' => 43,
-			'skiped' => 29,
-		),
-	),
-	17 => array(
-		'name' => 'Чехия / Чехословакия',
-		'games' => 33,
-		'win' => 12,
-		'draw' => 5,
-		'defeat' => 16,
-		'goals' => array(
-			'scored' => 47,
-			'skiped' => 49,
-		),
-	),
-	18 => array(
-		'name' => 'Чили',
-		'games' => 33,
-		'win' => 11,
-		'draw' => 7,
-		'defeat' => 15,
-		'goals' => array(
-			'scored' => 40,
-			'skiped' => 49,
-		),
-	),
-	19 => array(
-		'name' => 'Австрия',
-		'games' => 29,
-		'win' => 12,
-		'draw' => 4,
-		'defeat' => 13,
-		'goals' => array(
-			'scored' => 43,
-			'skiped' => 47,
-		),
-	),
-	20 => array(
-		'name' => 'Швейцария',
-		'games' => 33,
-		'win' => 11,
-		'draw' => 6,
-		'defeat' => 16,
-		'goals' => array(
-			'scored' => 45,
-			'skiped' => 59,
-		),
-	),
-	21 => array(
-		'name' => 'Парагвай',
-		'games' => 27,
-		'win' => 7,
-		'draw' => 10,
-		'defeat' => 10,
-		'goals' => array(
-			'scored' => 30,
-			'skiped' => 38,
-		),
-	),
-	22 => array(
-		'name' => 'США',
-		'games' => 33,
-		'win' => 8,
-		'draw' => 6,
-		'defeat' => 19,
-		'goals' => array(
-			'scored' => 37,
-			'skiped' => 62,
-		),
-	),
-	23 => array(
-		'name' => 'Румыния',
-		'games' => 21,
-		'win' => 8,
-		'draw' => 5,
-		'defeat' => 8,
-		'goals' => array(
-			'scored' => 30,
-			'skiped' => 32,
-		),
-	),
-	24 => array(
-		'name' => 'Южная Корея',
-		'games' => 31,
-		'win' => 5,
-		'draw' => 9,
-		'defeat' => 17,
-		'goals' => array(
-			'scored' => 31,
-			'skiped' => 67,
-		),
-	),
-	25 => array(
-		'name' => 'Дания',
-		'games' => 16,
-		'win' => 8,
-		'draw' => 2,
-		'defeat' => 6,
-		'goals' => array(
-			'scored' => 27,
-			'skiped' => 24,
-		),
-	),
-	26 => array(
-		'name' => 'Хорватия',
-		'games' => 16,
-		'win' => 7,
-		'draw' => 2,
-		'defeat' => 7,
-		'goals' => array(
-			'scored' => 21,
-			'skiped' => 17,
-		),
-	),
-	27 => array(
-		'name' => 'Колумбия',
-		'games' => 18,
-		'win' => 7,
-		'draw' => 2,
-		'defeat' => 9,
-		'goals' => array(
-			'scored' => 26,
-			'skiped' => 27,
-		),
-	),
-	28 => array(
-		'name' => 'Шотландия',
-		'games' => 23,
-		'win' => 4,
-		'draw' => 7,
-		'defeat' => 12,
-		'goals' => array(
-			'scored' => 25,
-			'skiped' => 41,
-		),
-	),
-	29 => array(
-		'name' => 'Камерун',
-		'games' => 23,
-		'win' => 4,
-		'draw' => 7,
-		'defeat' => 12,
-		'goals' => array(
-			'scored' => 18,
-			'skiped' => 43,
-		),
-	),
-	30 => array(
-		'name' => 'Коста-Рика',
-		'games' => 15,
-		'win' => 5,
-		'draw' => 4,
-		'defeat' => 6,
-		'goals' => array(
-			'scored' => 17,
-			'skiped' => 23,
-		),
-	),
-	31 => array(
-		'name' => 'Болгария',
-		'games' => 26,
-		'win' => 3,
-		'draw' => 8,
-		'defeat' => 15,
-		'goals' => array(
-			'scored' => 22,
-			'skiped' => 53,
-		),
-	),	      
-    ),
-        $average_scored,
-        $average_skipped;
+    public  $output,
+            $output_questions,
+            $db,
+            $picked_questions,
+            $skipped_questions,
+            $answered_questions = 0,
+            $total_questions;
     
     function __construct() { 
-        $this->init_average();                
+        $this->db = mysqli_connect("127.0.0.1", "root", "", "test");
     }
     
-    function calculate($c1, $c2){
-        $team1 = $this->powerCalculate($c1);
-        $team2 = $this->powerCalculate($c2);
+    function calculate($int, $diff_start, $diff_end, $ajax = false){
+        $questions = $this->getQuestions($diff_start, $diff_end);
         
-        $team1['avg_goal_prob'] = $team1['atack_power']*$team2['defense_power']*$this->average_scored;
-        $team2['avg_goal_prob'] = $team2['atack_power']*$team1['defense_power']*$this->average_scored;
+        foreach($this->picked_questions as $question){            
+             if($question->difficulty == 100){
+                $prob = 0;
+            } else if($question->difficulty >= $int){ 
+                $prob = ($question->difficulty*$int)/10000; 
+                if($int == 100 && $question->difficulty == 100)
+                    $prob = 0; //100 сложность на 100 интеллект
+                else if($int == 100)
+                    $prob = 1; //100 интеллект на любую сложность
+            } else{
+                $prob = 1 - ($int*$question->difficulty)/10000;
+                if($int == 100)
+                    $prob = 1;
+            }
+            if($question->difficulty == 0){
+                $prob = 1;
+            } else if($int == 0){
+                $prob = 0;
+            }
+            
+            $question->result = $this->checkWithProbability($prob);
+            
+            if($question->result)
+                $this->answered_questions++;
+            
+            $this->output_questions[] = $question;            
+        }        
         
-        $probs = $this->prob_calculator($team1['avg_goal_prob'], $team2['avg_goal_prob']);
+        $testing_data = $this->saveTesting($diff_start, $diff_end, $int);
         
-        return $this->result_calculator($probs);
-    }
-    
-    function result_calculator($probs){
-        function randomFloat($min = 0, $max = 1) {
-            return $min + mt_rand() / mt_getrandmax() * ($max - $min);
+        $this->output = '<div class="row"><div class="col-sm-8"><table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Порядковый номер вопроса</th>
+                        <th scope="col">ID вопроса по БД</th>
+                        <th scope="col">Количество тестов, в которых этот вопрос ранее встречался</th>
+                        <th scope="col">Сложность вопроса (от 0 до 100)</th>
+                        <th scope="col">Был ли дан правильный ответ</th>
+                    </tr>
+                </thead>
+            <tbody>';
+        
+        foreach($this->output_questions as $key=>$question){
+            $question->result = $question->result ? "Да" : "Нет";
+            $num = $key +1;
+            $this->output .= '<tr>
+                <th scope="row">' . $num . '</th>
+                <td>' . $question->id . '</td>
+                <td>' . $question->times_used . '</td>
+                <td>' . $question->difficulty . '</td>
+                <td>' . $question->result . '</td>
+              </tr>';
         }
         
-        foreach($probs as $key=>$goal_probs){
-            $sumOfWeights = array_sum($goal_probs);
-            $random = randomFloat(0, $sumOfWeights);  
-            do {
-                $sumOfWeights = array_sum($goal_probs);
-                if($random <= $sumOfWeights && $random >= $sumOfWeights - end($goal_probs)) {
-                    $result[$key] = key($goal_probs);
+        $this->output .= '</tbody></table></div>';
+        
+        $this->output .= '<div class="col-sm-4"><table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Порядковый номер тестирования</th>
+                        <th scope="col">Интеллект тестируемого</th>
+                        <th scope="col">Диапазон сложности вопросов (от до)</th>
+                        <th scope="col">Результат тестирования (X из 40)</th>
+                    </tr>
+                </thead>
+            <tbody>';
+        
+        $this->output .= '<tr>
+                <th scope="row">' . $testing_data->id . '</th>
+                <td>' . $testing_data->intelligence . '</td>
+                <td>' . $testing_data->range_from . ' до ' . $testing_data->range_to . '</td>
+                <td>' . $this->answered_questions . " вопросов из " . $this->total_questions . '</td>
+              </tr>';
+        
+        $this->output .= '</tbody></table></div></div>';
+        
+        $this->output .= '<div class="jumbotron">
+                            <h3>Тестируемый ответил правильно на ' . $this->answered_questions . " вопросов из " . $this->total_questions . '.</h3><br />    
+                        </div>';
+        
+        return $this->output;
+    }
+    
+    function getQuestions($diff_start, $diff_end){ 
+        $sql = 'SELECT MAX(times_used) AS top_used FROM questions'
+                . ' WHERE difficulty >= ' . $diff_start . ' AND difficulty <= ' . $diff_end . ';';
+        $result = $this->db->query($sql)->fetch_object();
+        
+        if(!empty($result->top_used))
+            $minimum_prob = 1/$result->top_used; // вероятность что будет выбран самый популярный вопрос
+        else 
+            $minimum_prob = 0;
+        
+        $sql = 'SELECT * FROM questions'
+                . ' WHERE difficulty >= ' . $diff_start . ' AND difficulty <= ' . $diff_end . ' ORDER BY times_used;';
+        
+        $result = $this->db->query($sql); 
+        while ($row = $result->fetch_object()){ 
+            if($result->num_rows > 40){ // Вычисляем вероятность только если вопросов больше 40
+                $prob = 1 - $minimum_prob*$row->times_used; // Вычисляем вероятность с которой вопрос будет выбран относительно вероятности выбора самого популярного вопроса
+                $row->picked = $this->checkWithProbability($prob);          
+                if($row->picked){
+                    $this->picked_questions[] = $row;
+                } else {
+                    $this->skipped_questions[] = $row;
                 }
-            } while(array_pop($goal_probs));
+                if(isset($this->picked_questions) && count($this->picked_questions) == 40){
+                    break;
+                }                
+            } else {
+                $this->picked_questions[] = $row;
+                $less_than_40 = true;
+            }
+        }  
+        if(isset($this->picked_questions) && count($this->picked_questions) < 40 && !isset($less_than_40)){ //в случае если после вычисления вероятностей кол-во вопросов меньше 40 то дополняем массив отброшенными вопросами с наименьшей популярностью
+            usort($this->skipped_questions, array($this, "cmp"));            
+            $this->picked_questions = array_merge($this->picked_questions, array_slice($this->skipped_questions, 0, 40 - count($this->picked_questions)));                        
+        }        
+        $this->total_questions = count($this->picked_questions);
+        
+        $this->incrementTimesUsed();        
+    }
+    
+    function saveTesting($diff_start, $diff_end, $int){
+        $sql = "INSERT INTO testing (intelligence, range_from, range_to, result) VALUES (" . $int . ", " . $diff_start . ", " . $diff_end . ", " . $this->answered_questions . ")";                        
+        $this->db->query($sql);
+        $sql = "SELECT * FROM testing WHERE `id` =" . $this->db->insert_id;
+        return $this->db->query($sql)->fetch_object();
+    }
+    
+    function incrementTimesUsed(){ 
+        $sql = "INSERT INTO questions (id, times_used) VALUES ";        
+        foreach($this->picked_questions as $key=>$question){ 
+            $question->times_used++;
+            if($key + 1 < count($this->picked_questions))
+                $sql .= "(" . $question->id . ", " . intval($question->times_used) . "),";
+            else 
+                $sql .= "(" . $question->id . ", " . intval($question->times_used) . ")";
         }
-                
-        return $result;
+        $sql .= " ON DUPLICATE KEY UPDATE times_used=VALUES(times_used)";
+        
+        $this->db->query($sql);
     }
     
-    function prob_calculator($prob1, $prob2){
-        $team1[] = exp(-$prob1); 
-        $team1[] = $prob1*exp(-$prob1);
-        $team2[] = exp(-$prob2); 
-        $team2[] = $prob2*exp(-$prob2);
-        
-        for ($i = 2; $i <= 5; $i++) {
-            $team1[$i] = 1/$this->factorial($i)* pow($prob1, $i)* exp(-$prob1);
-            $team2[$i] = 1/$this->factorial($i)* pow($prob2, $i)* exp(-$prob2);
-        }
-        
-        return array($team1, $team2);
+    function cmp($a, $b)
+    {
+        return strcmp($a->times_used, $b->times_used);
     }
     
-    function factorial($x){
-        $result = 1 ;
-        while ( $x >= 2 ) $result *= $x-- ;
-        
-        return $result ;
-    }
-    
-    function init_average(){
-        $games = array_sum(array_column($this->teams, 'games'));
-        
-        $scored = array_reduce($this->teams, function($carry, $item) {
-            $carry += $item['goals']['scored'];
-            return $carry;
-        });
-        
-        $skiped = array_reduce($this->teams, function($carry, $item) {
-            $carry += $item['goals']['skiped'];
-            return $carry;
-        });
-        
-        $this->average_scored = $scored/$games;        
-        $this->average_skiped = $skiped/$games;
-    }
-    
-    function powerCalculate($id){                    
-        $team = $this->teams[$id];
-        $team['atack_power'] = ($team['goals']['scored']/$team['games'])/$this->average_scored;
-        $team['defense_power'] = ($team['goals']['skiped']/$team['games'])/$this->average_skiped;
-        
-        return $team;        
+    function checkWithProbability($probability=0.1, $length=10000)
+    {
+       $test = mt_rand(1, $length);
+       return $test<=$probability*$length;
     }
 } 
  
