@@ -19,14 +19,24 @@ class Main {
         foreach($this->picked_questions as $question){            
              if($question->difficulty == 100){
                 $prob = 0;
-            } else if($question->difficulty >= $int){ 
-                $prob = ($question->difficulty*$int)/10000; 
+            } else if($question->difficulty >= $int){
+                $koef = $question->difficulty*$int;
+                if($koef > 1000)
+                    $prob = ($koef)/10000; 
+                else {
+                    $prob = 1 - ($koef)/10000;
+                }
                 if($int == 100 && $question->difficulty == 100)
                     $prob = 0; //100 сложность на 100 интеллект
                 else if($int == 100)
                     $prob = 1; //100 интеллект на любую сложность
-            } else{ 
-                $prob = ($int*$question->difficulty)/10000; var_dump($prob);
+            } else{
+                $koef = $int*$question->difficulty;
+                if($koef > 1000)
+                    $prob = ($koef)/10000;
+                else {
+                    $prob = 1 - ($koef)/10000;
+                }
                 if($int == 100)
                     $prob = 1;
             }
