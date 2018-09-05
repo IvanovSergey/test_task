@@ -10,7 +10,7 @@ class Main {
             $total_questions;
     
     function __construct() { 
-        $this->db = mysqli_connect("127.0.0.1", "root", "1488", "test");
+        $this->db = mysqli_connect("127.0.0.1", "root", "", "test");
     }
     
     function calculate($int, $diff_start, $diff_end, $ajax = false){
@@ -25,8 +25,8 @@ class Main {
                     $prob = 0; //100 сложность на 100 интеллект
                 else if($int == 100)
                     $prob = 1; //100 интеллект на любую сложность
-            } else{
-                $prob = 1 - ($int*$question->difficulty)/10000;
+            } else{ 
+                $prob = ($int*$question->difficulty)/10000; var_dump($prob);
                 if($int == 100)
                     $prob = 1;
             }
